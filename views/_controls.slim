@@ -1,0 +1,18 @@
+- if @winner == nil
+  - if @@player.bet == nil
+    br
+    b Set bet:
+    .bets
+      .btn-group
+        a.btn.btn-default href="/bet/10"  10
+        a.btn.btn-default href="/bet/20"  20
+        a.btn.btn-default href="/bet/100"  100
+        a.btn.btn-default href="/bet/500"  500
+
+  br
+  .btn-group
+    a.btn.btn-success href="/deal" deal!
+    a.btn.btn-warning href="/hit"  hit!
+    a.btn.btn-danger href="/stand" stand!
+- else 
+  a.btn.btn-success href="/" Start new round!

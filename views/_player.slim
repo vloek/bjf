@@ -1,0 +1,12 @@
+.player
+  p Balance: #{@@player.balance}
+
+  - if @@player.bet != nil
+    p Bet: #{@@player.bet}
+
+  - if @@player.current_hand != nil
+    p Value hand: #{@@player.current_hand.value}
+    - @@player.current_hand.cards.each do |card|
+      = card.to_s
+      |, 
+

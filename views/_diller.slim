@@ -1,0 +1,8 @@
+.diller
+  - if @@diller.hand != nil
+    - if @winner != nil
+      - @@diller.hand.cards.each do |card|
+        = card.to_s
+        |, 
+    - else 
+      = @@diller.first_card

@@ -1,0 +1,20 @@
+html
+  head
+      title Black Jack
+      link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+
+      link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
+
+  body
+
+    .container.panel.panel-default style="margin-top: 20px;"
+      h1 Black Jack
+
+      .panel-body
+        .row
+          .col-lg-6
+            == render partial: "diller"
+            == render partial: "player"
+            == render partial: "controls"
+          .col-lg-6
+            == render partial: "winner"
