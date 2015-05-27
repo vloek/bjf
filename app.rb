@@ -37,6 +37,8 @@ end
 
 get "/stand" do 
   @winner = @@diller.command(StandCommand.new(@@player, @@diller, @@deck))
+  @@player.reset_bet! if @@player.hands.count == 0
+
   slim :index
 end
 
