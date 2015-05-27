@@ -52,9 +52,13 @@ get "/bet/:money" do
 end
 
 get "/double" do
-  @@player.add_money!(@@player.bet) 
-  @@player.double!(@@player.bet)
-  slim :index
+  begin 
+    @@player.add_money!(@@player.bet) 
+    @@player.double!(@@player.bet)
+    slim :index
+  rescue => @e
+    slim :error
+  end
 end
 
 get "/reset" do
