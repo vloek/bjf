@@ -62,6 +62,11 @@ get "/reset" do
   redirect "/"
 end
 
+get "/next_hand" do 
+  @@player.take_hand!(@@player.hands.pop) if @@player.hands.count > 0
+  slim :index
+end   
+
 
 # Helpers 
 helpers do

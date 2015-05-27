@@ -1,3 +1,6 @@
 - if @winner != nil
   h3 Winner: #{@winner}
   img style="width: 300px;" src="/images/#{@winner}.jpg"
+
+  - if @@player.hands.count > 0
+    a.btn.btn-default href="/next_hand" Next hand 
