@@ -7,6 +7,8 @@
   - if @@player.current_hand != nil
     p Value hand: #{@@player.current_hand.value}
     - @@player.current_hand.cards.each do |card|
-      = card.to_s
-      |, 
+      img width="100" src="/images/cards/#{card.to_s}.png"
+      |. 
 
+hr
+br

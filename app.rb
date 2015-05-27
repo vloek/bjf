@@ -4,6 +4,12 @@ set :slim, format: :html
 @@deck   = Deck.new
 
 
+after "/hit" do 
+  if @@player.current_hand && @@player.current_hand.value > 21
+    redirect "/stand"
+  end
+end
+
 get "/" do
   @@diller = Diller.new
   @@player.flush!
@@ -25,7 +31,7 @@ get "/deal" do
 end
 
 get "/split" do 
-  @@diller.command(SplitCommand.new(@@player))
+  @@diller.command(SplitCommand.new(@@player, @@deck))
   slim :index
 end
 
@@ -43,11 +49,17 @@ get "/bet/:money" do
   end
 end
 
+get "/double" do
+  @@player.add_money!(@@player.bet) 
+  @@player.double!(@@player.bet)
+  slim :index
+end
+
 get "/reset" do
   @@player = Player.new(1000)
   @@deck   = Deck.new
   @@diller = Diller.new
-  slim :index
+  redirect "/"
 end
 
 

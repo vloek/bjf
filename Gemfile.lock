@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/vloek/blackjack2.git
-  revision: 4995304b8428275dd499d6f3db885d6e03442ae2
+  revision: 633928d0cecd016166b3aadef2b15c73733eb879
   specs:
     blackjack2 (0.0.1)
 

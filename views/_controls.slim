@@ -8,11 +8,19 @@
         a.btn.btn-default href="/bet/20"  20
         a.btn.btn-default href="/bet/100"  100
         a.btn.btn-default href="/bet/500"  500
+  - elsif @@player.current_hand.count != 0
+    a.btn.btn-default href="/double" Double
 
   br
   .btn-group
-    a.btn.btn-success href="/deal" deal!
-    a.btn.btn-warning href="/hit"  hit!
-    a.btn.btn-danger href="/stand" stand!
+    - if @@player.current_hand.count == 0 && @@player.bet != nil
+      a.btn.btn-success href="/deal" deal!
+
+    - if @@player.current_hand && @@player.current_hand.count >= 2
+      a.btn.btn-warning href="/hit"  hit!
+      a.btn.btn-default href="/split" split!
+
+      - if @@player.bet != nil
+        a.btn.btn-danger href="/stand" stand!
 - else 
   a.btn.btn-success href="/" Start new round!
