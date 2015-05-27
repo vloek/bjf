@@ -4,11 +4,11 @@
       - if @@player.bet == nil
         br
         b Set bet:
-        
-            a.btn.btn-default href="/bet/10"  10
-            a.btn.btn-default href="/bet/20"  20
-            a.btn.btn-default href="/bet/100"  100
-            a.btn.btn-default href="/bet/500"  500
+        br
+        a.btn.btn-default href="/bet/10"  10
+        a.btn.btn-default href="/bet/20"  20
+        a.btn.btn-default href="/bet/100"  100
+        a.btn.btn-default href="/bet/500"  500
       - elsif @@player.current_hand.count != 0
         a.btn.btn-default href="/double" Double
 
